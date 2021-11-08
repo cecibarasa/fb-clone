@@ -3,7 +3,7 @@ import './App.css';
 function App() {
   return (
     //BEM naming convention
-    <div className="App">
+    <div className="app">
       <h1>Lets build the meta clone</h1>
     </div>
   );
