@@ -1,4 +1,8 @@
 .app  {
-  width: 100%;
-    
-  }
+  /* width: 100%; */
+  background-color: #f1f2f5;    
+}
+
+.app__body {
+  display: flex;
+}
