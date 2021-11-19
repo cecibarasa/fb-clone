@@ -8,11 +8,14 @@ import PeopleIcon from '@mui/icons-material/People';
 import ChatIcon from '@mui/icons-material/Chat';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import { useStateValue } from './StateProvider';
 
 function Sidebar() {
+    const [ {user}, dispatch ] = useStateValue();
+
     return (
         <div className="sidebar">
-            <SidebarRow src="https://image.freepik.com/free-vector/jazz-musical-instruments_81894-3155.jpg" title="Jazz"/>
+            <SidebarRow src={user.photoURL} title={user.displayName}/>
             <SidebarRow Icon={LocalHospitalIcon} title="COVID-19 Information Center"/>
 
             <SidebarRow Icon={EmojiFlagsIcon} title="Pages"/>

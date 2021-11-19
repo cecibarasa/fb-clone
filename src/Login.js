@@ -3,14 +3,23 @@ import "./Login.css"
 import { Button } from '@mui/material'
 import { auth, provider } from "./firebase";
 // import provider from "./firebase";
+import { actionTypes } from "./reducer";
+import { useStateValue } from "./StateProvider";
 
 
 function Login() {
+    const [state, dispatch] = useStateValue();
+
     const signIn = () => {
         //sign in..
         auth.signInWithPopup(provider)
         .then(result => {
-            console.log(result);
+
+            dispatch({
+                type: actionTypes.SET_USER,
+                user: result.user,
+            })
+            // console.log(result);
         })
         .catch((error) => alert(error.message))
     }
